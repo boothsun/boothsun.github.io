@@ -238,15 +238,10 @@
 <li>#if(!$foo) 判断为空, #if($foo) 判断为非空。</li>
 <li>使用#ifnull()或#ifnotnull()<br>eg: #ifnull<br>注意:要使用此特性必须在velocity.properties文件中加入: <!--lang: java--> 
  userdirective = org.apache.velocity.tools.generic.directive.Ifnull<br> userdirective = org.apache.velocity.tools.generic.directive.Ifnotnull</li>
+<li>使用null工具判断<br> #if($null.isNull($foo)) 特别是在判断一个集合为null或为空时,只能使用这种方式了: $if($null.isNull(&amp;list) || $list.size() == 0)</li>
 </ol>
 
                 
-<p class="pink-link-context">
-    <a href="/2017/01/04/velocity判断为空和null/" rel="next" title="">
-    上一篇：
-  </a>
-</p>
-
 
 
 <p class="pink-link-context">
