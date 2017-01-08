@@ -235,11 +235,11 @@
             <div class="entry red-link-context">
                 <p>git代码提交一般分成五个步骤:<br>1.查看目前代码的修改状态.<br>2.查看代码修改内容。<br>3.暂存需要提交的文件。<br>4.提交已经暂存的文件。<br>5.同步到服务器。</p>
 <hr>
-<h1 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解:"></a>命令详解:</h1><h2 id="1-查看目前代码的修改状态"><a href="#1-查看目前代码的修改状态" class="headerlink" title=" 1.查看目前代码的修改状态"></a> 1.查看目前代码的修改状态</h2><p> 提交代码之前,首先应该检查目前所做的修改,运行git status 命令 可以查看到三种大类(已暂存、已修改、未跟踪)下的文件三种状态(new file:新建文件 modified:已修改 deleted:删除文件)<br> 案例:<br>  <img src="/img/1.png" alt="使用git status命令结果"></p>
+<h1 id="命令详解"><a href="#命令详解" class="headerlink" title="命令详解:"></a>命令详解:</h1><h2 id="1-查看目前代码的修改状态"><a href="#1-查看目前代码的修改状态" class="headerlink" title=" 1.查看目前代码的修改状态"></a> 1.查看目前代码的修改状态</h2><p> 提交代码之前,首先应该检查目前所做的修改,运行git status 命令 可以查看到三种大类(已暂存、已修改、未跟踪)下的文件三种状态(new file:新建文件 modified:已修改 deleted:删除文件)<br> 案例:<br>  <img src="/img/20170108/1.png" alt="使用git status命令结果"></p>
 <h2 id="2-查看代码修改的内容-或者说产生diff文件"><a href="#2-查看代码修改的内容-或者说产生diff文件" class="headerlink" title="  2.查看代码修改的内容(或者说产生diff文件)"></a>  2.查看代码修改的内容(或者说产生diff文件)</h2><pre><code>git diff &lt;file&gt; ##比较某文件与最近一次提交节点的差异
 git diff &lt;hashcode&gt; &lt;hashcode&gt; &lt;file&gt;  ##比较某文件在两个提交点之间的差异
 git diff &lt;file&gt; &gt; d://1.diff ## 产生某个文件与最忌一次提交节点的diff文件
-</code></pre><p>  案例:<br>  <img src="/img/git diff.png" alt="使用 git diff命令的结果"></p>
+</code></pre><p>  案例:<br>  <img src="/img/20170108/git diff.png" alt="使用 git diff命令的结果"></p>
 <h2 id="3-暂存需要提交的文件"><a href="#3-暂存需要提交的文件" class="headerlink" title="  3.暂存需要提交的文件"></a>  3.暂存需要提交的文件</h2><p>  如果是新建或修改的文件,则使用:<code>git add &lt;file&gt;</code><br>  如果是删除的文件,则使用:<code>git rm &lt;file&gt;</code></p>
 <h2 id="4-提交已暂存的文件"><a href="#4-提交已暂存的文件" class="headerlink" title="  4.提交已暂存的文件"></a>  4.提交已暂存的文件</h2>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git commit -m &apos;提交注释&apos; ##提交暂存区里面的内容 (Changes to be committed) 注意:-m是必须的,表示提交一条注释</div><div class="line">git commit -am &apos;提交注释&apos; ##除了将暂存区里的文件提交外,还提交被修改但是没有添加到暂存区的文件(changes but not updated)的文件.</div><div class="line">git commit --amend ##修改最近一次提交.有时候如果提交注释书写有误或者漏提文件,可以使用此命令。</div></pre></td></tr></table></figure>
 <p>  详见:<a href="http://www.cnblogs.com/eddy-he/archive/2012/03/22/git_commit.html" target="_blank" rel="external">git commit详解</a></p>
